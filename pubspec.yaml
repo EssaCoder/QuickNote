@@ -1,0 +1,81 @@
+name: quick_note
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  #config
+  flutter_screenutil: ^5.9.3
+  easy_localization: ^3.0.7
+
+  #local storage
+  shared_preferences: ^2.3.2
+
+
+  #state management
+  flutter_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
+
+  #firebase
+  cloud_firestore: ^5.5.0
+  firebase_core: ^3.8.0
+
+  #Widgets
+  flutter_svg: ^2.0.14
+
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+  flutter_gen_runner: ^5.8.0
+  riverpod_generator: ^2.4.3
+  build_runner: ^2.4.12
+
+#App icon
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo.png"
+  min_sdk_android: 20
+  remove_alpha_ios: true
+  adaptive_icon_background: "#ffffff"
+  background_color_ios: "#ffffff"
+
+  flutter_lints: ^4.0.0
+
+# Generated assets files configuration
+flutter_gen:
+  assets:
+    outputs:
+  output: lib/gen/
+  line_length: 80
+  integrations:
+    flutter_svg: true
+    lottie: false
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/translations/
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: Alexandria
+      fonts:
+        - asset: assets/fonts/Alexandria-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Alexandria-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Alexandria-SemiBold.ttf
+          weight: 600
