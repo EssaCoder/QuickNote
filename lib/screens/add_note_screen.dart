@@ -26,10 +26,10 @@ class _AddNoteScreenState extends ConsumerState<AddNoteScreen> {
   @override
   void didChangeDependencies() {
     final request = ModalRoute.of(context)?.settings.arguments as NoteRequest?;
-    if (request == null && this.request != null) {
+    if (request != null && this.request == null) {
       this.request = request;
-      _titleController.text = request?.title ?? '';
-      _detailsController.text = request?.details ?? '';
+      _titleController.text = request.title ?? '';
+      _detailsController.text = request.details ?? '';
     }
     super.didChangeDependencies();
   }
@@ -46,7 +46,7 @@ class _AddNoteScreenState extends ConsumerState<AddNoteScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'إنشاء ملاحظة',
+          this.request == null?  'إنشاء ملاحظة':'تعديل الملاحظة',
           style: TextStyle(
             color: Colors.blue,
             fontWeight: FontWeight.w700,
